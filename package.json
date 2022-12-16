@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Small project for quickly testing Cypress.io test runner",
   "scripts": {
-    "cypress:run": "cypress run",
+    "cypress:run": "concurrently \"http-server -p 8888\" \"cypress run\"",
     "cypress:open": "cypress open",
     "cypress:verify": "cypress verify",
     "cypress:version": "cypress version",
@@ -17,6 +17,9 @@
   "author": "Gleb Bahmutov <gleb@cypress.io>",
   "license": "ISC",
   "devDependencies": {
+    "concurrently": "^7.6.0",
+    "cypress": "^12.1.0",
+    "http-server": "^14.1.1",
     "ok-file": "1.5.2"
   },
   "repository": {
